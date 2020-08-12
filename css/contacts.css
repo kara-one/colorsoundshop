@@ -65,7 +65,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  margin: 0 -5px !important;
 }
 
 .contact-page__contacts-soc li {
@@ -75,6 +75,7 @@
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  margin: 0 5px;
 }
 
 .contact-page__contacts-soc a {
