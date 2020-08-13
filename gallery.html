@@ -27,16 +27,17 @@
                 <!-- DESKTOP TAB -->
                 <div class="main-product__img-tabbed">
                     <div class="img-tabbed__container">
-                        <figure class="img-tabbed__wrap"><img class="card__img" id="expanded__img"
+                        <figure class="img-tabbed__wrap"><img class="card__img lightbox-desk__open" id="expanded__img"
                                 src="https://colorsoundshop.com/static/media/gallery/photos/2012/5/20/cache/Rode-K2_shop_detail_item.jpg"
-                                alt="RODE K2" title="RODE K2"></figure>
+                                alt="RODE K2" title="RODE K2" style="cursor: pointer;"></figure>
                     </div>
                     <!-- LIGHTBOX GALLERY -->
                     <!-- В этом блоке используется оригинальная разметка с правками для работы LIGHTBOX -->
                     <div class="img-tabbed__row lightbox-desk">
                         <div class="img-tabbed__column">
                             <a href="https://colorsoundshop.com/static/media/gallery/photos/2012/5/20/cache/Rode-K2_shop_detail_item.jpg"
-                                data-lightbox="lightbox-desk" data-title="RODE K2" title="RODE K2"><img class="img-tabbed__size"
+                                data-lightbox="lightbox-desk" data-title="RODE K2" title="RODE K2"><img
+                                    class="img-tabbed__size"
                                     src="https://colorsoundshop.com/static/media/gallery/photos/2012/5/20/cache/Rode-K2_shop_detail_item.jpg"
                                     alt="RODE K2" title="RODE K2" style="width:100%"></a></div>
                         <div class="img-tabbed__column">
@@ -58,7 +59,7 @@
                     <div>
                         <figure><img
                                 src="https://colorsoundshop.com/static/media/gallery/photos/2012/5/20/cache/Rode-K2_shop_detail_item.jpg"
-                                alt="RODE K2" title="RODE K2" style="width:100%"></figure>
+                                class="lightbox-mob__open" alt="RODE K2" title="RODE K2" style="width:100%"></figure>
                     </div>
                     <!-- LIGHTBOX GALLERY -->
                     <div class="img-tabbed__row lightbox-mob">
@@ -135,13 +136,21 @@
             </div>
         </div>
     </main>
-    
+
     <!-- LIGHTBOX GALLERY -->
     <script type="text/javascript" src="vendor/lightbox/js/lightbox-plus-jquery.min.js"></script>
     <script>
         lightbox.option({
             'albumLabel': "Картинка %1 из %2",
             'wrapAround': true
+        })
+
+        document.querySelector('.lightbox-desk__open').addEventListener('click', function () {
+            document.querySelector('.lightbox-desk a:first-child').click();
+        })
+
+        document.querySelector('.lightbox-mob__open').addEventListener('click', function () {
+            document.querySelector('.lightbox-mob a:first-child').click();
         })
     </script>
     <!-- ..LIGHTBOX GALLERY -->
