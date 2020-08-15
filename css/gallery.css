@@ -1,0 +1,6 @@
+/** Lightbox overlay */
+
+.lightboxOverlay {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=6) !important;
+  opacity: 0.06 !important;
+}

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .main-product__tab-block .main-product__description-content {
   overflow: hidden;
   -webkit-transition: max-height 1.5s;
@@ -49,4 +51,20 @@
   margin-left: 8px;
   vertical-align: middle;
   fill: #3e77aa;
+}
+
+/** FIX OPEN TAB IN MOBILE */
+
+/** найти в файле style.css и заменить свойства, значение !important при переносе удалить! */
+
+@media (max-width: 500px) {
+  .mobile__tab--content {
+    -webkit-transition: all 1s ease-in-out !important;
+    -o-transition: all 1s ease-in-out !important;
+    transition: all 1s ease-in-out !important;
+  }
+
+  input:checked ~ .mobile__tab--content {
+    max-height: 1000vh !important;
+  }
 }

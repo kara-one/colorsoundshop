@@ -1,5 +1,7 @@
 .contact-page {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   grid-row-gap: 20px;
   height: -webkit-fit-content;
@@ -36,10 +38,17 @@
 /** */
 
 .contact-page__contacts {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
   grid-column: 1 / 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
   grid-row: 2 / 3;
-  grid-template: "title-call" "phones" "soc" "title-address" "address" "mails";
+  -ms-grid-rows: auto 25px auto 25px auto 25px auto 25px auto;
+      grid-template: "title-call" "phones" "soc" "title-address" "address" "mails";
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 25px;
   -webkit-box-align: center;
@@ -51,21 +60,29 @@
 }
 
 .contact-page__contacts-title-call {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: title-call;
 }
 
 .contact-page__contacts-phones {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   grid-area: phones;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
 }
 
 .contact-page__contacts-soc {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
   grid-area: soc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  margin: 0 -5px !important;
 }
 
 .contact-page__contacts-soc li {
@@ -75,6 +92,7 @@
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  margin: 0 5px;
 }
 
 .contact-page__contacts-soc a {
@@ -87,21 +105,31 @@
 }
 
 .contact-page__contacts-title-address {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
   grid-area: title-address;
 }
 
 .contact-page__contacts-address {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
   grid-area: address;
 }
 
 .contact-page__contacts-mails {
+  -ms-grid-row: 11;
+  -ms-grid-column: 1;
   grid-area: mails;
 }
 
 /** */
 
 .contact-page__info {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
   grid-column: 1 / 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
   grid-row: 3 / 4;
   background: #f5f8fc url("../img/icon_attention.png") 0 0 no-repeat;
   background-size: 100px 100px;
@@ -114,7 +142,11 @@
 /** */
 
 .contact-page__image {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
   grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
   grid-row: 1 / 2;
   text-align: center;
 }
@@ -129,33 +161,98 @@
 
 @media (min-width: 600px) {
   .contact-page__contacts {
-    grid-template: "title-call title-address" "phones address" "soc mails";
+    -ms-grid-rows: auto 15px auto;
+        grid-template: "title-call title-address" "phones address" "soc mails";
     grid-column-gap: 15px;
     grid-row-gap: 15px;
+  }
+  .contact-page__contacts-title-call {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .contact-page__contacts-phones {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .contact-page__contacts-soc {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+  }
+  .contact-page__contacts-title-address {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .contact-page__contacts-address {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+  .contact-page__contacts-mails {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
   }
 }
 
 @media (min-width: 992px) {
   .contact-page {
+    -ms-grid-columns: 1fr 35%;
     grid-template-columns: 1fr 35%;
     grid-row-gap: 20px;
   }
 
   .contact-page__contacts {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1 / 2;
-    grid-template: "title-call title-address" "phones address" "soc mails";
+    -ms-grid-rows: auto auto;
+        grid-template: "title-call title-address" "phones address" "soc mails";
     grid-column-gap: 25px;
     margin-left: 25px;
   }
 
   .contact-page__info {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / 3;
     margin-left: 10px;
   }
 
   .contact-page__image {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-column: 2 / 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
     grid-row: 1 / 3;
+  }
+
+  .contact-page__contacts-title-call {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+
+  .contact-page__contacts-phones {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+
+  .contact-page__contacts-soc {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+
+  .contact-page__contacts-title-address {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+
+  .contact-page__contacts-address {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+  }
+
+  .contact-page__contacts-mails {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
   }
 }
 
